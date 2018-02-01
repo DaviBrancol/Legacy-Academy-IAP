@@ -7,6 +7,14 @@ class IAPTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        IAProducts.store.requestProducts(completionHandler: {
+            (status, productsOptional) in
+            if status {
+                guard let products = productsOptional else { return }
+                self.products = products
+                self.tableView.reloadData()
+            }
+        })
     }
 
     // MARK: - Table view data source
@@ -32,5 +40,10 @@ class IAPTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! IAPTableViewCell
         guard let product = cell.product else { return }
+        IAProducts.store.buyProduct(product)
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+       return "My In App Purchases - 2018"
     }
 }

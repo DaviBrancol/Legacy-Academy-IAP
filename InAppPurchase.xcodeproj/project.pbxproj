@@ -15,6 +15,7 @@
 		5B2CC003202231C300058B63 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CC001202231C300058B63 /* IAPHelper.swift */; };
 		5B2CC00620234D4100058B63 /* IAPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CC00520234D4100058B63 /* IAPTableViewController.swift */; };
 		5B2CC00820234D5600058B63 /* IAPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2CC00720234D5600058B63 /* IAPTableViewCell.swift */; };
+		5B2CC00B2023811F00058B63 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B2CC00A2023811F00058B63 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5B2CC001202231C300058B63 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		5B2CC00520234D4100058B63 /* IAPTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTableViewController.swift; sourceTree = "<group>"; };
 		5B2CC00720234D5600058B63 /* IAPTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPTableViewCell.swift; sourceTree = "<group>"; };
+		5B2CC00A2023811F00058B63 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B2CC00B2023811F00058B63 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			children = (
 				5B2CBFEC2022313600058B63 /* InAppPurchase */,
 				5B2CBFEB2022313600058B63 /* Products */,
+				5B2CC0092023811F00058B63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +93,14 @@
 			path = Visual;
 			sourceTree = "<group>";
 		};
+		5B2CC0092023811F00058B63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B2CC00A2023811F00058B63 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +134,11 @@
 					5B2CBFE92022313600058B63 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
